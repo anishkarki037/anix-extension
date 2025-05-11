@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
   "name": "Anix",
   "scopeName": "source.anix",
-  "fileTypes": ["anix"],
+  "fileTypes": [ "anix" ],
   "patterns": [
     { "include": "#comments" },
     { "include": "#directives" },
@@ -29,8 +29,9 @@
           "match": "#.*$"
         },
         {
-          "name": "comment.line.triple-hash.anix",
-          "match": "###.*$"
+          "name": "comment.block.anix",
+          "begin": "###",
+          "end": "###"
         }
       ]
     },
@@ -39,9 +40,7 @@
         {
           "name": "keyword.control.include.anix",
           "match": "^\\s*include\\s+\"([^\"]+)\"\\s*;?",
-          "captures": {
-            "1": { "name": "string.quoted.double.anix" }
-          }
+          "captures": { "1": { "name": "string.quoted.double.anix" } }
         },
         {
           "name": "keyword.control.importjs.anix",
@@ -65,9 +64,7 @@
     "template-directive": {
       "name": "meta.template.anix",
       "match": "\\{\\{\\s*([\\w$]+)\\s*\\}\\}",
-      "captures": {
-        "1": { "name": "entity.name.function.template.anix" }
-      }
+      "captures": { "1": { "name": "entity.name.function.template.anix" } }
     },
     "js-commands": {
       "patterns": [
@@ -79,7 +76,7 @@
             "2": { "name": "variable.parameter.js-selector.anix" }
           },
           "end": "\\}",
-          "patterns": [{ "include": "source.js" }]
+          "patterns": [ { "include": "source.js" } ]
         },
         {
           "name": "meta.js-command-simple.anix",
@@ -97,21 +94,17 @@
           "name": "meta.script-block.anix",
           "begin": "^\\s*script\\s*\\{",
           "end": "\\}",
-          "patterns": [{ "include": "source.js" }]
+          "patterns": [ { "include": "source.js" } ]
         },
         {
           "name": "meta.script-src.anix",
           "match": "^\\s*script\\s*\\(src\\s*[=:]\\s*\"([^\"]+)\"\\)\\s*$",
-          "captures": {
-            "1": { "name": "string.quoted.double.src.anix" }
-          }
+          "captures": { "1": { "name": "string.quoted.double.src.anix" } }
         },
         {
           "name": "meta.script-inline.anix",
           "match": "^\\s*script:\\s*(.*)$",
-          "captures": {
-            "1": { "name": "source.js.embedded.anix" }
-          }
+          "captures": { "1": { "name": "source.js.embedded.anix" } }
         }
       ]
     },
@@ -157,7 +150,10 @@
           "begin": "\"",
           "end": "\"",
           "patterns": [
-            { "name": "constant.character.escape.anix", "match": "\\\\." }
+            {
+              "name": "constant.character.escape.anix",
+              "match": "\\\\."
+            }
           ]
         }
       ]

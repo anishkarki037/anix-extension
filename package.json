@@ -1,0 +1,38 @@
+{
+  "name": "anix-language",
+  "displayName": "Anix Language",
+  "description": "Syntax highlighting for Anix files",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/anix-language"
+  },
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "anix",
+        "aliases": [
+          "Anix",
+          "anix"
+        ],
+        "extensions": [
+          ".anix"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "anix",
+        "scopeName": "source.anix",
+        "path": "./syntaxes/anix.tmLanguage.json"
+      }
+    ]
+  }
+}

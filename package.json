@@ -1,11 +1,11 @@
 {
-  "name": "anix-language",
-  "displayName": "Anix Language",
+  "name": "anix",
+  "displayName": "Anix Language Support",
   "description": "Syntax highlighting for Anix files",
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/anix-language"
+    "url": "https://github.com/anishkarki037/anix-extension.git"
   },
   "engines": {
     "vscode": "^1.60.0"

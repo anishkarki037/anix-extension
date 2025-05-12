@@ -25,10 +25,6 @@
           "match": "//.*$"
         },
         {
-          "name": "comment.line.hash.anix",
-          "match": "#.*$"
-        },
-        {
           "name": "comment.block.anix",
           "begin": "###",
           "end": "###"
